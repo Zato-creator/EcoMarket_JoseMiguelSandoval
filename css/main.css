@@ -1,0 +1,48 @@
+/*Variables globales*/
+:root {
+    /* Paleta de colores solicitada */
+    --color-primary: #2ecc71;       /* Verde vibrante para CTA y botones */
+    --color-secondary: #27ae60;     /* Verde oscuro para hovers y contraste */
+    --color-accent: #f5f5dc;        /* Tierra/Beige para fondos secundarios */
+    
+    /* Colores neutrales */
+    --color-bg-light: #fafafa;      /* Blanco roto para el fondo general */
+    --color-white: #ffffff;
+    --color-text-dark: #333333;     /* Gris muy oscuro para el texto (mejor legibilidad que el negro puro) */
+    --color-text-muted: #666666;    /* Gris medio para descripciones */
+
+    /* Tipografía (Sistema sin serifa para un look limpio y moderno) */
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Reset basico css */
+* {
+    margin: 0;
+    padding: 0;
+    /* border-box asegura que el padding no aumente el tamaño total del elemento */
+    box-sizing: border-box; 
+}
+
+/* Estilos base */
+body {
+    font-family: var(--font-main);
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-light);
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+}
+
+/* Limpiamos estilos de enlaces y listas globalmente */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%; /* Hace que las imágenes sean responsivas por defecto */
+    height: auto;
+    display: block;
+}
