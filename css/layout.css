@@ -394,3 +394,67 @@ CSS
         grid-template-columns: repeat(4, 1fr); /* Escritorio: 4 columnas */
     }
 }
+
+
+/* PÁGINA SOBRE NOSOTROS: LAYOUTS */
+
+/* SECCIÓN: HISTORIA (Flexbox Mobile First) */
+.story {
+    padding: 5rem 1.5rem;
+}
+
+.story__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Móvil: Texto arriba, imagen abajo */
+    gap: 3rem;
+}
+
+.story__text {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-muted);
+}
+
+.story__image {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Media Query: Escritorio (Texto a la izquierda, imagen a la derecha) */
+@media (min-width: 768px) {
+    .story__container {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .story__content, 
+    .story__image-wrapper {
+        flex: 1; /* Ambos ocupan el 50% del espacio */
+    }
+}
+
+/* SECCIÓN: PRINCIPIOS (Fondo Accent) */
+.principles {
+    background-color: var(--color-accent);
+    padding: 5rem 1.5rem;
+}
+
+.principles__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.principles__grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Móvil */
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .principles__grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
+    }
+}

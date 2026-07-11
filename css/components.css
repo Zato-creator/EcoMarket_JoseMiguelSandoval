@@ -1,6 +1,4 @@
-/* =========================================
-   COMPONENTES: TARJETA DE PRODUCTO
-   ========================================= */
+/* COMPONENTES: TARJETA DE PRODUCTO*/
 .product-card {
     background-color: var(--color-white);
     border-radius: 12px;
@@ -150,4 +148,145 @@
     background-color: var(--color-primary);
     color: var(--color-white);
     border-color: var(--color-primary);
+}
+
+
+/* =========================================
+   COMPONENTES: SOBRE NOSOTROS
+   ========================================= */
+
+/* Tarjetas de Principios */
+.principle-card {
+    background: var(--color-white);
+    padding: 2.5rem 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    transition: transform 0.3s;
+}
+
+.principle-card:hover {
+    transform: translateY(-5px);
+}
+
+.principle-card__icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.principle-card__title {
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+}
+
+/* COMPONENTES: CARRUSEL CSS DE TESTIMONIOS */
+.testimonials {
+    padding: 5rem 1.5rem;
+    background-color: var(--color-bg-light);
+}
+
+.testimonials__container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* La magia del Slider sin JS */
+.carousel {
+    display: flex;
+    overflow-x: auto; /* Permite desplazamiento horizontal */
+    scroll-snap-type: x mandatory; /* Fuerza a que las tarjetas se "encajen" al hacer scroll */
+    gap: 2rem;
+    padding-bottom: 2rem; /* Espacio para que la sombra no se corte */
+    
+    /* Ocultar la barra de scroll (estético) */
+    scrollbar-width: none; /* Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+
+/* Tarjeta del testimonio individual */
+.testimonial-card {
+    scroll-snap-align: center; /* Encaja la tarjeta en el centro de la vista */
+    flex: 0 0 100%; /* En móvil ocupa todo el ancho */
+    max-width: 400px;
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    /* Efecto de animación solicitado */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Animación al pasar el ratón */
+.testimonial-card:hover {
+    transform: scale(1.05); /* Se agranda un 5% */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* Ajuste del carrusel para escritorio */
+@media (min-width: 768px) {
+    .testimonial-card {
+        flex: 0 0 calc(50% - 1rem); /* Muestra 2 tarjetas a la vez en pantallas grandes */
+    }
+}
+
+.testimonial-card__stars {
+    margin-bottom: 1rem;
+}
+
+.testimonial-card__text {
+    font-style: italic;
+    color: var(--color-text-dark);
+    margin-bottom: 2rem;
+}
+
+.testimonial-card__user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+.testimonial-card__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover;
+}
+
+.testimonial-card__name {
+    font-weight: bold;
+    color: var(--color-secondary);
+}
+
+/* Mostrar una barra de scroll estilizada para que los usuarios de PC puedan interactuar */
+.carousel {
+    scrollbar-width: thin; /* Para Firefox */
+    scrollbar-color: var(--color-primary) var(--color-bg-light);
+}
+
+/* Estilos de la barra para Chrome, Safari y Edge */
+.carousel::-webkit-scrollbar {
+    height: 10px; /* Grosor de la barra horizontal */
+}
+
+.carousel::-webkit-scrollbar-track {
+    background: var(--color-bg-light); 
+    border-radius: 10px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+    background: var(--color-primary); 
+    border-radius: 10px;
+}
+
+.carousel::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary); /* Se oscurece al pasar el cursor */
 }
