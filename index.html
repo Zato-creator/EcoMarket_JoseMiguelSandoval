@@ -13,7 +13,44 @@
 <body>
     
     <header class="header">
-        </header>
+        <div class="header__container">
+            
+            <a href="index.html" class="header__logo">
+                EcoMarket
+            </a>
+
+            <input type="checkbox" id="menu-toggle" class="header__checkbox">
+            
+            <label for="menu-toggle" class="header__toggle-btn">
+                <span class="header__icon-bar"></span>
+                <span class="header__icon-bar"></span>
+                <span class="header__icon-bar"></span>
+            </label>
+
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <a href="index.html" class="header__link header__link--active">Inicio</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="views/productos.html" class="header__link">Productos</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="views/sobre-nosotros.html" class="header__link">Nosotros</a>
+                    </li>
+                    <li class="header__item">
+                        <a href="views/contacto.html" class="header__link">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header__utilities">
+                <a href="#" class="header__icon" aria-label="Buscar">🔍</a>
+                <a href="#" class="header__icon" aria-label="Carrito de compras">🛒</a>
+            </div>
+
+        </div>
+    </header>
 
     <main>
         <section class="hero">

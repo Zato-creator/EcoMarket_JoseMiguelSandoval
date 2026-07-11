@@ -1,0 +1,153 @@
+/* HEADER LAYOUT enfocado a primero mobile */
+.header {
+    background-color: var(--color-white);
+    position: sticky; /* Se queda fijo arriba al hacer scroll */
+    top: 0;
+    z-index: 1000; /* Asegura que esté por encima de todo el contenido */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenedor en pantallas grandes */
+    position: relative;
+}
+
+/* Estilo del Logo */
+.header__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-secondary);
+}
+
+/* Ocultar por completo el input del Checkbox Hack */
+.header__checkbox {
+    display: none;
+}
+
+/* Botón Hamburguesa (Estilo del Label) */
+.header__toggle-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+/* Líneas internas del botón hamburguesa */
+.header__icon-bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-text-dark);
+    transition: all 0.3s ease; /* Para futuras animaciones suaves */
+}
+
+/* Navegación móvil por defecto (Cerrada y superpuesta) */
+.header__nav {
+    position: absolute;
+    top: 100%; /* Se despliega justo abajo del header */
+    left: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    max-height: 0; /* Oculto inicialmente controlando la altura */
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out; /* Animación de apertura */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.header__item {
+    width: 100%;
+    text-align: center;
+}
+
+.header__link {
+    display: block;
+    padding: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+/* Modificador BEM para el enlace de la página activa */
+.header__link--active {
+    color: var(--color-primary);
+}
+
+.header__link:hover {
+    color: var(--color-primary);
+    background-color: var(--color-bg-light);
+}
+
+/* Iconos de utilidad (Búsqueda y Carrito) */
+.header__utilities {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.header__icon {
+    transition: transform 0.2s;
+}
+
+.header__icon:hover {
+    transform: scale(1.1);
+}
+
+/* Interactividad con el CHECKBOX HACK */
+/* Cuando el checkbox esté marcado (~ busca al hermano), despliega el menú nav */
+.header__checkbox:checked ~ .header__nav {
+    max-height: 300px; /* Altura suficiente para albergar los 4 enlaces */
+}
+
+/* Opcional: Transformar la hamburguesa en una 'X' cuando esté abierto */
+.header__checkbox:checked ~ .header__toggle-btn .header__icon-bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.header__checkbox:checked ~ .header__toggle-btn .header__icon-bar:nth-child(2) {
+    opacity: 0; /* Oculta la barra del medio */
+}
+.header__checkbox:checked ~ .header__toggle-btn .header__icon-bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Media Queries para pantallas más grandes (Tablet y Desktop) */
+@media (min-width: 768px) {
+    /* Ocultamos el botón hamburguesa porque ya hay espacio */
+    .header__toggle-btn {
+        display: none;
+    }
+
+    /* Reestructuramos la navegación para que se muestre en línea */
+    .header__nav {
+        position: static; /* Vuelve a su flujo normal */
+        width: auto;
+        max-height: none; /* Ignora el límite de altura del móvil */
+        box-shadow: none;
+        overflow: visible;
+    }
+
+    .header__list {
+        flex-direction: row; /* Enlaces uno al lado del otro */
+        gap: 2rem;
+    }
+
+    .header__link {
+        padding: 0.5rem 0;
+    }
+    
+    .header__link:hover {
+        background-color: transparent; /* Quitamos el fondo gris del móvil */
+    }
+}
+
