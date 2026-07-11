@@ -151,3 +151,31 @@
     }
 }
 
+/* COMPONENTES: BOTONES */
+
+/* Clase base del botón */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px; /* Bordes redondeados para un diseño amigable/natural */
+    transition: all 0.3s ease; /* Transición suave para el hover */
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Modificador BEM: Botón Principal */
+.btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 2px solid var(--color-primary);
+}
+
+/* Efecto al pasar el cursor (Hover) */
+.btn--primary:hover {
+    background-color: var(--color-secondary); /* Cambia a verde oscuro */
+    border-color: var(--color-secondary);
+    transform: translateY(-3px); /* Efecto visual de que el botón se eleva */
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4); /* Sombra difuminada verde */
+}
