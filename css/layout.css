@@ -179,3 +179,47 @@
     transform: translateY(-3px); /* Efecto visual de que el botón se eleva */
     box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4); /* Sombra difuminada verde */
 }
+
+/* SECCIÓN: PRODUCTOS DESTACADOS */
+.featured-products {
+    padding: 5rem 1.5rem;
+    background-color: var(--color-bg-light);
+}
+
+.featured-products__container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Título de sección genérico (útil para otras páginas) */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--color-secondary);
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+/* SISTEMA DE CUADRÍCULA (GRID)
+   Enfoque Mobile First: 1 sola columna por defecto 
+*/
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 fracción = ocupa todo el ancho */
+    gap: 2rem; /* Espacio entre las tarjetas */
+}
+
+/* Media Query: Tablets (2 columnas) */
+@media (min-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Media Query: Escritorio (3 columnas para mostrar 6 productos en 2 filas) */
+@media (min-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem; /* Más espacio para respirar en pantallas grandes */
+    }
+}
