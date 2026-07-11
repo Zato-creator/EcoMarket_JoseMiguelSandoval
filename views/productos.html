@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | EcoMarket</title>
+    
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+    
+    <header class="header">
+        <div class="header__container">
+            <a href="../index.html" class="header__logo">EcoMarket</a>
+            <input type="checkbox" id="menu-toggle" class="header__checkbox">
+            <label for="menu-toggle" class="header__toggle-btn">
+                <span class="header__icon-bar"></span>
+                <span class="header__icon-bar"></span>
+                <span class="header__icon-bar"></span>
+            </label>
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item"><a href="../index.html" class="header__link">Inicio</a></li>
+                    <li class="header__item"><a href="productos.html" class="header__link header__link--active">Productos</a></li>
+                    <li class="header__item"><a href="sobre-nosotros.html" class="header__link">Nosotros</a></li>
+                    <li class="header__item"><a href="contacto.html" class="header__link">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header__utilities">
+                <a href="#" class="header__icon" aria-label="Buscar">🔍</a>
+                <a href="#" class="header__icon" aria-label="Carrito">🛒</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="catalog-page">
+        <div class="catalog-search">
+            <input type="text" placeholder="Buscar productos ecológicos..." class="catalog-search__input">
+            <button class="btn btn--primary catalog-search__btn">Buscar</button>
+        </div>
+
+        <div class="catalog-layout">
+            <aside class="sidebar">
+                <div class="sidebar__widget">
+                    <h3 class="sidebar__title">Categorías</h3>
+                    <ul class="sidebar__list">
+                        <li><label><input type="checkbox"> Hogar</label></li>
+                        <li><label><input type="checkbox"> Moda Sostenible</label></li>
+                        <li><label><input type="checkbox"> Cuidado Personal</label></li>
+                        <li><label><input type="checkbox"> Alimentos</label></li>
+                    </ul>
+                </div>
+                <div class="sidebar__widget">
+                    <h3 class="sidebar__title">Precio</h3>
+                    <input type="range" min="0" max="100" class="sidebar__range">
+                    <div class="sidebar__price-labels">
+                        <span>$0</span><span>$100+</span>
+                    </div>
+                </div>
+                <div class="sidebar__widget">
+                    <h3 class="sidebar__title">Disponibilidad</h3>
+                    <ul class="sidebar__list">
+                        <li><label><input type="radio" name="stock" checked> Todos</label></li>
+                        <li><label><input type="radio" name="stock"> En Stock</label></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <section class="catalog-content">
+                <div class="catalog-grid">
+                    /* Producto 1 */    
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-1" class="fav-checkbox">
+                            <label for="fav-1" class="fav-label">❤</label>
+                        </div>
+
+                        <img src="https://images.unsplash.com/photo-1610555356070-d1fb3d92431a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 1" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Cepillo de Bambú</h3>
+                            <p class="product-card__price">$5.99</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                    /* Producto 2 */
+                    <article class="product-card product-card--disabled">
+                        <span class="product-card__tag product-card__tag--out-stock">Agotado</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-2" class="fav-checkbox">
+                            <label for="fav-2" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1584346133934-a3afd2a33c4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 2" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Bolsa Orgánica</h3>
+                            <p class="product-card__price">$12.50</p>
+                            <button class="btn btn--primary product-card__btn" disabled>Sin Stock</button>
+                        </div>
+                    </article>
+                    /* Producto 3 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-3" class="fav-checkbox">
+                            <label for="fav-3" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1603569283847-61d04b0d5d9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 3" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Envase de Vidrio</h3>
+                            <p class="product-card__price">$8.99</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                    /* Producto 4 */ 
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-4" class="fav-checkbox">
+                            <label for="fav-4" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1598514982930-1c3f5e8b6f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 4" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Copa Menstrual</h3>
+                            <p class="product-card__price">$15.00</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                    /* Producto 5 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-5" class="fav-checkbox">
+                            <label for="fav-5" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1610555356070-d1fb3d92431a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 5" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Cepillo de Bambú</h3>
+                            <p class="product-card__price">$5.99</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                    /* Producto 6 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-6" class="fav-checkbox">
+                            <label for="fav-6" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1584346133934-a3afd2a33c4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 6" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Bolsa Orgánica</h3>
+                            <p class="product-card__price">$12.50</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                    /* Producto 7 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-7" class="fav-checkbox">
+                            <label for="fav-7" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1603569283847-61d04b0d5d9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 7" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Envase de Vidrio</h3>
+                            <p class="product-card__price">$8.99</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                    /* Producto 8 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-8" class="fav-checkbox">
+                            <label for="fav-8" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1598514982930-1c3f5e8b6f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 8" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Copa Menstrual</h3>
+                            <p class="product-card__price">$15.00</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                    /* Producto 9 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-9" class="fav-checkbox">
+                            <label for="fav-9" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1610555356070-d1fb3d92431a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 9" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Cepillo de Bambú</h3>
+                            <p class="product-card__price">$5.99</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>  
+                    /* Producto 10 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-10" class="fav-checkbox">
+                            <label for="fav-10" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1584346133934-a3afd2a33c4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 10" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Bolsa Orgánica</h3>
+                            <p class="product-card__price">$12.50</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                    /* Producto 11 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-11" class="fav-checkbox">
+                            <label for="fav-11" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1603569283847-61d04b0d5d9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 11" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Envase de Vidrio</h3>
+                            <p class="product-card__price">$8.99</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>  
+                    /* Producto 12 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-12" class="fav-checkbox">
+                            <label for="fav-12" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1598514982930-1c3f5e8b6f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 12" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Copa Menstrual</h3>
+                            <p class="product-card__price">$15.00</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                    /* Producto 13 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-13" class="fav-checkbox">
+                            <label for="fav-13" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1610555356070-d1fb3d92431a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 13" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Cepillo de Bambú</h3>
+                            <p class="product-card__price">$5.99</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                    /* Producto 14 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-14" class="fav-checkbox">
+                            <label for="fav-14" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1584346133934-a3afd2a33c4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 14" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Bolsa Orgánica</h3>
+                            <p class="product-card__price">$12.50</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                    /* Producto 15 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-15" class="fav-checkbox">
+                            <label for="fav-15" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1603569283847-61d04b0d5d9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 15" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Envase de Vidrio</h3>
+                            <p class="product-card__price">$8.99</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                    /* Producto 16 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-16" class="fav-checkbox">
+                            <label for="fav-16" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1598514982930-1c3f5e8b6f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 16" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Copa Menstrual</h3>
+                            <p class="product-card__price">$15.00</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                    /* Producto 17 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-17" class="fav-checkbox">
+                            <label for="fav-17" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1610555356070-d1fb3d92431a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 17" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Cepillo de Bambú</h3>
+                            <p class="product-card__price">$5.99</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                    /* Producto 18 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-18" class="fav-checkbox">
+                            <label for="fav-18" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1584346133934-a3afd2a33c4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 18" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Bolsa Orgánica</h3>
+                            <p class="product-card__price">$12.50</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                    /* Producto 19 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-19" class="fav-checkbox">
+                            <label for="fav-19" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1603569283847-61d04b0d5d9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 19" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Envase de Vidrio</h3>
+                            <p class="product-card__price">$8.99</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                    /* Producto 20 */
+                    <article class="product-card">
+                        <span class="product-card__tag product-card__tag--in-stock">En Stock</span>
+                        <div class="product-card__fav">
+                            <input type="checkbox" id="fav-20" class="fav-checkbox">
+                            <label for="fav-20" class="fav-label">❤</label>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1598514982930-1c3f5e8b6f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Producto 20" class="product-card__image">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Copa Menstrual</h3>
+                            <p class="product-card__price">$15.00</p>
+                            <a href="#" class="btn btn--primary product-card__btn">Añadir al carrito</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="pagination">
+                    <a href="#" class="pagination__btn">&laquo; Ant</a>
+                    <a href="#" class="pagination__link pagination__link--active">1</a>
+                    <a href="#" class="pagination__link">2</a>
+                    <a href="#" class="pagination__link">3</a>
+                    <a href="#" class="pagination__btn">Sig &raquo;</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    </body>
+</html>

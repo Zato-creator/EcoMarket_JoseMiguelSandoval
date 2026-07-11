@@ -51,3 +51,103 @@
     padding: 0.7rem;
     font-size: 1rem;
 }
+
+/* COMPONENTES: ACTUALIZACIÓN TARJETA CATÁLOGO */
+.product-card {
+    position: relative; /* Necesario para posicionar stock y fav */
+}
+
+/* Etiquetas de Stock */
+.product-card__tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--color-white);
+    z-index: 10;
+}
+
+.product-card__tag--in-stock {
+    background-color: var(--color-primary);
+}
+
+.product-card__tag--out-stock {
+    background-color: #e74c3c; /* Rojo para agotado */
+}
+
+/* Tarjeta deshabilitada (Agotada) */
+.product-card--disabled .product-card__image {
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+.product-card--disabled .product-card__btn {
+    background-color: #bdc3c7;
+    border-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.product-card__price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+}
+
+/* BOTÓN FAVORITO (CSS Puro sin JS) */
+.product-card__fav {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background: var(--color-white);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.fav-checkbox {
+    display: none; /* Ocultamos el input real */
+}
+
+.fav-label {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #ccc; /* Corazón gris por defecto */
+    transition: color 0.3s, transform 0.2s;
+    user-select: none;
+}
+
+/* La magia sin JS: Si el checkbox oculto está marcado, cambia el color del label adyacente */
+.fav-checkbox:checked + .fav-label {
+    color: #e74c3c; /* Corazón rojo */
+    transform: scale(1.1); /* Ligero aumento de tamaño */
+}
+
+/* COMPONENTES: PAGINACIÓN */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pagination__link, .pagination__btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.pagination__link--active, .pagination__link:hover, .pagination__btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
