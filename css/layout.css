@@ -223,3 +223,83 @@
         gap: 3rem; /* Más espacio para respirar en pantallas grandes */
     }
 }
+
+/* SECCIÓN: FOOTER (PIE DE PÁGINA) */
+.footer {
+    background-color: #2c3e50; /* Un tono oscuro y elegante que transmite seriedad */
+    color: var(--color-white);
+    padding-top: 4rem; /* Espacio generoso en la parte superior */
+}
+
+.footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr; /* 1 columna por defecto (Móvil) */
+    gap: 2rem;
+}
+
+/* Media Query: Tablets (2 columnas) */
+@media (min-width: 768px) {
+    .footer__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Media Query: Escritorio (4 columnas) */
+@media (min-width: 1024px) {
+    .footer__container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.footer__title {
+    color: var(--color-primary); /* Títulos en verde para resaltar sobre el fondo oscuro */
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.footer__text, 
+.footer__link {
+    color: #bdc3c7; /* Un gris claro para el texto, menos agresivo que el blanco puro */
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.footer__link {
+    transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+    color: var(--color-white); /* Ilumina el enlace al pasar el cursor */
+    text-decoration: underline;
+}
+
+/* Contenedor de iconos sociales */
+.footer__socials {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Efecto scale solicitado para las redes sociales */
+.footer__social-link {
+    font-size: 1.5rem;
+    display: inline-block;
+    transition: transform 0.3s ease; /* Prepara la animación suave */
+}
+
+.footer__social-link:hover {
+    transform: scale(1.2); /* Aumenta su tamaño un 20% al hacer hover */
+}
+
+/* Copyright al final */
+.footer__bottom {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea divisoria muy sutil */
+    background-color: #243342; /* Un tono ligerísimamente más oscuro que el footer general */
+    font-size: 0.85rem;
+    color: #95a5a6;
+}

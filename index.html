@@ -126,7 +126,53 @@
         </section>
     </main>
 
+    ¡Manos a la obra para cerrar nuestra página de inicio con broche de oro!
+
+El Footer (Pie de página) es fundamental. Aquí colocaremos información de contacto, enlaces de navegación secundarios y las redes sociales. Utilizaremos nuevamente CSS Grid para organizar la información en columnas que se adapten al tamaño de la pantalla, y le daremos un fondo oscuro para que contraste elegantemente con el resto del sitio.
+
+Paso 1: Actualizar el HTML en index.html
+Busca la etiqueta <footer class="footer"> que dejamos vacía al final de tu archivo index.html y reemplázala con este bloque de código:
+
+HTML
     <footer class="footer">
+        <div class="footer__container">
+            
+            <div class="footer__section">
+                <h3 class="footer__title">EcoMarket</h3>
+                <p class="footer__text">Tu tienda en línea de productos ecológicos, reutilizables y éticos. Cuidamos de ti y del planeta.</p>
+            </div>
+
+            <div class="footer__section">
+                <h3 class="footer__title">Enlaces Rápidos</h3>
+                <ul class="footer__list">
+                    <li><a href="index.html" class="footer__link">Inicio</a></li>
+                    <li><a href="views/productos.html" class="footer__link">Catálogo</a></li>
+                    <li><a href="views/sobre-nosotros.html" class="footer__link">Nosotros</a></li>
+                    <li><a href="views/contacto.html" class="footer__link">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__section">
+                <h3 class="footer__title">Contacto</h3>
+                <p class="footer__text">📧 hola@ecomarket.com</p>
+                <p class="footer__text">📱 +57 320 867 0349</p>
+                <p class="footer__text">📍 Calle 35 # 8 - 33 barrio Alfonzo Lopez Bucaramanga, Colombia</p>
+            </div>
+
+            <div class="footer__section">
+                <h3 class="footer__title">Síguenos</h3>
+                <div class="footer__socials">
+                    <a href="#" class="footer__social-link" aria-label="Facebook">📘</a>
+                    <a href="#" class="footer__social-link" aria-label="Instagram">📸</a>
+                    <a href="#" class="footer__social-link" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer__bottom">
+            <p>&copy; 2026 EcoMarket. Todos los derechos reservados. Proyecto Educativo.</p>
+        </div>
     </footer>
 
 </body>
