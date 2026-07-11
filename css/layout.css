@@ -458,3 +458,53 @@ CSS
         grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
     }
 }
+
+/* PÁGINA CONTACTO: LAYOUT */
+.contact-page {
+    padding: 4rem 1.5rem;
+    background-color: var(--color-bg-light);
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--color-white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    overflow: hidden; /* Para que el mapa no se salga de las esquinas redondeadas */
+    display: grid;
+    grid-template-columns: 1fr; /* Móvil: 1 columna */
+}
+
+@media (min-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr 1fr; /* Escritorio: 2 columnas iguales */
+    }
+}
+
+.contact-info {
+    background-color: var(--color-accent);
+    padding: 3rem;
+}
+
+.contact-info__text {
+    margin-bottom: 2rem;
+    color: var(--color-text-dark);
+}
+
+.contact-info__details p {
+    margin-bottom: 1rem;
+    color: var(--color-text-muted);
+}
+
+.contact-info__map-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.contact-form-section {
+    padding: 3rem;
+}
