@@ -1,37 +1,64 @@
-/*Variables globales*/
-:root {
-    /* Paleta de colores solicitada */
-    --color-primary: #2ecc71;       /* Verde vibrante para CTA y botones */
-    --color-secondary: #27ae60;     /* Verde oscuro para hovers y contraste */
-    --color-accent: #f5f5dc;        /* Tierra/Beige para fondos secundarios */
-    
-    /* Colores neutrales */
-    --color-bg-light: #fafafa;      /* Blanco roto para el fondo general */
-    --color-white: #ffffff;
-    --color-text-dark: #333333;     /* Gris muy oscuro para el texto (mejor legibilidad que el negro puro) */
-    --color-text-muted: #666666;    /* Gris medio para descripciones */
+/* Importamos una fuente Serif elegante para los títulos desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap');
 
-    /* Tipografía (Sistema sin serifa para un look limpio y moderno) */
-    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+
+
+/* 1. VARIABLES GLOBALES*/
+:root {
+    /* Nueva Paleta de Colores basada en tu mockup */
+    --color-primary: #2ecc71;       /* Verde vibrante original */
+    --color-primary-hover: #27ae60; 
+    --color-dark-green: #2c4c3b;    /* Verde muy oscuro para botones secundarios */
+    --color-cream: #f4f4e8;         /* Color crema elegante para el footer y fondos */
+    --color-white: #ffffff;
+    
+    /* Textos */
+    --color-text-dark: #1a1a1a;     /* Casi negro para máximo contraste */
+    --color-text-muted: #555555;    /* Gris para descripciones */
+    --color-border: #eaeaea;        /* Gris súper claro para líneas */
+
+    /* Tipografía */
+    --font-heading: 'Playfair Display', serif; /* Fuente elegante para títulos */
+    --font-body: 'Inter', sans-serif;          /* Fuente limpia para textos y botones */
 }
 
-/* Reset basico css */
+
+
+
+
+
+/* MODO NOCTURNO SIMPLIFICADO (Solo Fondo y Texto Base) */
+body:has(.dark-mode-checkbox:checked) {
+    background-color: #1a1a1a;   /* Fondo general oscuro */
+    color: #ffffff;             /* Texto base blanco para que no se pierda */
+}
+
+/* Forzamos a que el contenedor principal de la página también se adapte si es necesario */
+body:has(.dark-mode-checkbox:checked) main {
+    background-color: #1a1a1a;
+}
+
+/* 2. RESET BÁSICO CSS  */
 * {
     margin: 0;
     padding: 0;
-    /* border-box asegura que el padding no aumente el tamaño total del elemento */
     box-sizing: border-box; 
 }
 
-/* Estilos base */
+/* 3. ESTILOS BASE */
 body {
-    font-family: var(--font-main);
+    font-family: var(--font-body);
     color: var(--color-text-dark);
-    background-color: var(--color-bg-light);
-    line-height: 1.6; /* Mejora la legibilidad del texto */
+    background-color: var(--color-white);
+    line-height: 1.6;
 }
 
-/* Limpiamos estilos de enlaces y listas globalmente */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--color-text-dark);
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -42,7 +69,9 @@ ul {
 }
 
 img {
-    max-width: 100%; /* Hace que las imágenes sean responsivas por defecto */
+    max-width: 100%;
     height: auto;
     display: block;
 }
+
+

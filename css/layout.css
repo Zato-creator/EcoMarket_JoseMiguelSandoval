@@ -1,10 +1,10 @@
 /* HEADER LAYOUT enfocado a primero mobile */
 .header {
-    background-color: var(--color-white);
-    position: sticky; /* Se queda fijo arriba al hacer scroll */
+    background-color: var(--color-white); /* Esto asegura que use el color blanco definido en :root */
+    position: sticky; 
     top: 0;
-    z-index: 1000; /* Asegura que esté por encima de todo el contenido */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+    z-index: 1000; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
 }
 
 .header__container {
@@ -19,9 +19,16 @@
 
 /* Estilo del Logo */
 .header__logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--color-secondary);
+    font-family: var(--font-heading); /* Usa la fuente elegante */
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+.header__logo-icon {
+    color: var(--color-primary);
 }
 
 /* Ocultar por completo el input del Checkbox Hack */
@@ -76,12 +83,14 @@
     display: block;
     padding: 1.2rem;
     font-weight: 500;
+    color: var(--color-text-dark);
     transition: color 0.3s;
 }
 
 /* Modificador BEM para el enlace de la página activa */
 .header__link--active {
     color: var(--color-primary);
+    font-weight: 700;
 }
 
 .header__link:hover {
@@ -89,19 +98,46 @@
     background-color: var(--color-bg-light);
 }
 
-/* Iconos de utilidad (Búsqueda y Carrito) */
+/* Ocultamos el checkbox del modo nocturno */
+.dark-mode-checkbox {
+    display: none;
+}
+
+/* Iconos de utilidad actualizados */
 .header__utilities {
     display: flex;
-    gap: 1rem;
-    font-size: 1.2rem;
+    align-items: center;
+    gap: 1.2rem;
 }
 
 .header__icon {
-    transition: transform 0.2s;
+    color: var(--color-text-dark); /* El icono toma el color del texto actual */
+    transition: transform 0.2s, color 0.3s; /* Transición suave al cambiar colores */
+    position: relative; 
+    display: flex; /* Centra el SVG perfectamente */
 }
 
 .header__icon:hover {
     transform: scale(1.1);
+    color: var(--color-primary); /* Se pintan de verde al pasar el ratón */
+}
+
+/* Burbuja del carrito */
+.header__cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: 0.65rem;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid var(--color-white); /* Borde blanco para separarlo del icono */
 }
 
 /* Interactividad con el CHECKBOX HACK */
@@ -151,6 +187,15 @@
     }
 }
 
+
+
+
+
+
+
+
+
+
 /* COMPONENTES: BOTONES */
 
 /* Clase base del botón */
@@ -159,26 +204,34 @@
     padding: 0.8rem 2.5rem;
     font-size: 1.1rem;
     font-weight: bold;
-    border-radius: 50px; /* Bordes redondeados para un diseño amigable/natural */
-    transition: all 0.3s ease; /* Transición suave para el hover */
+    border-radius: 50px;
+    transition: all 0.3s ease;
     cursor: pointer;
     text-align: center;
+    border: 2px solid transparent; /* Aseguramos que tenga un borde base invisible */
 }
 
 /* Modificador BEM: Botón Principal */
 .btn--primary {
     background-color: var(--color-primary);
     color: var(--color-white);
-    border: 2px solid var(--color-primary);
+    border-color: var(--color-primary);
 }
 
-/* Efecto al pasar el cursor (Hover) */
+/* Efecto al pasar el cursor (Hover) solicitado */
 .btn--primary:hover {
-    background-color: var(--color-secondary); /* Cambia a verde oscuro */
-    border-color: var(--color-secondary);
-    transform: translateY(-3px); /* Efecto visual de que el botón se eleva */
-    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4); /* Sombra difuminada verde */
+    background-color: transparent;      /* 👈 Se vuelve transparente */
+    color: var(--color-text-dark);      /* 👈 Texto color oscuro */
+    border-color: var(--color-text-dark); /* Borde color oscuro para definir el botón */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave acorde al nuevo color */
 }
+
+
+
+
+
+
 
 /* SECCIÓN: PRODUCTOS DESTACADOS */
 .featured-products {
@@ -199,6 +252,15 @@
     margin-bottom: 3rem;
     font-weight: 700;
 }
+
+
+
+
+
+
+
+
+
 
 /* SISTEMA DE CUADRÍCULA (GRID)
    Enfoque Mobile First: 1 sola columna por defecto 
@@ -223,6 +285,19 @@
         gap: 3rem; /* Más espacio para respirar en pantallas grandes */
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* SECCIÓN: FOOTER (PIE DE PÁGINA) */
 .footer {
@@ -304,7 +379,6 @@
     color: #95a5a6;
 }
 
-CSS
 /* PÁGINA CATÁLOGO: LAYOUT */
 .catalog-page {
     padding: 2rem 1.5rem;
@@ -363,6 +437,11 @@ CSS
 .sidebar__list li {
     margin-bottom: 0.5rem;
 }
+
+
+
+
+
 
 /* GRID DEL CATÁLOGO (Requerimiento: 4 Desktop -> 2 Tablet -> 1 Móvil) */
 .catalog-grid {
@@ -507,4 +586,82 @@ CSS
 
 .contact-form-section {
     padding: 3rem;
+}
+
+
+
+
+
+
+
+/* SECCIÓN: HERO BANNER */
+.hero {
+    /* Fondo con la imagen local que acabas de guardar, oscurecida con un gradiente */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('../img/hero/fondo_banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    height: 80vh; /* Un poco más alto para dar elegancia */
+    min-height: 500px;
+    
+    /* Flexbox para alinear el contenido a la izquierda */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alineado a la izquierda */
+    padding: 0 5%; /* Espaciado lateral */
+}
+
+.hero__content {
+    max-width: 650px; /* Evita que el texto cruce toda la pantalla */
+    color: var(--color-white);
+    text-align: left; /* Asegura que el texto respete la izquierda */
+}
+
+.hero__title {
+    font-size: 3.5rem; /* Tamaño base */
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    color: var(--color-white);
+}
+
+.hero__subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+}
+
+.hero__buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap; /* Si la pantalla es muy pequeña, un botón pasa abajo del otro */
+}
+
+
+/* Header Layout: Ajustes para pantallas más grandes */
+
+
+@media (min-width: 768px) {
+
+
+    .header__list {
+        display: flex;
+        flex-direction: row;       
+        gap: 2rem;                 
+    }
+
+    .header__item {
+        width: auto;               
+    }
+
+    /* Estilos del enlace en modo escritorio */
+    .header__link {
+        padding: 0.5rem 0;
+        white-space: nowrap;      
+    }
+    
+    .header__link:hover {
+        background-color: transparent; 
+    }
 }
