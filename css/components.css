@@ -332,10 +332,6 @@
     display: none; /* Oculto inicialmente */
 }
 
-/* TRUCO CSS PRO: VALIDACIÓN VISUAL
-   Usamos :not(:placeholder-shown) para que solo
-   valide CUANDO el usuario ya empezó a escribir.*/
-
 /* Si el usuario escribió algo y es VÁLIDO (borde verde) */
 .form__input:not(:placeholder-shown):valid {
     border-color: #2ecc71; /* Verde */
@@ -360,7 +356,95 @@
     margin-top: 1rem;
     width: 100%;
 }
+.principle-card__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem auto; /* Centrado con margen abajo */
+    background-color: rgba(46, 204, 113, 0.1); /* Un fondo verde muy sutil (cambia el color si es necesario) */
+    border-radius: 50%; /* Lo hace un círculo perfecto */
+    transition: transform 0.3s ease;
+}
 
+/* Efecto al pasar el cursor por encima de la tarjeta del principio */
+.principle-card:hover .principle-card__icon {
+    transform: scale(1.1); /* El icono crece ligeramente */
+}
+
+
+/*Boton WhatsApp*/
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;                     /* Separación del borde inferior */
+    right: 30px;                      /* Separación del borde derecho */
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;        /* Verde oficial de WhatsApp */
+    color: #ffffff;
+    border-radius: 50%;               /* Círculo perfecto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 9999;                    /* Súper alto para quedar por encima de todo */
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    
+    /* Dispara la animación de pulso infinito (duración 2s) */
+    animation: whatsapp-radar-pulse 2s infinite;
+}
+
+/* Efectos al pasar el cursor (Hover) */
+.whatsapp-btn:hover {
+    background-color: #20ba5a;        /* Verde ligeramente más oscuro */
+    transform: scale(1.1);            /* Crece sutilmente */
+}
+
+/* Icono SVG interior */
+.whatsapp-btn__icon {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover .whatsapp-btn__icon {
+    transform: rotate(10deg);         /* Gira ligeramente al hacer hover para darle juego */
+}
+
+/* 🌀 ANIMACIÓN DE PULSO RADAR EN CSS */
+@keyframes whatsapp-radar-pulse {
+    0% {
+        transform: scale(1);
+        /* Sombra inicial pegada al botón */
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        /* La sombra se expande hacia afuera y se vuelve traslúcida */
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        transform: scale(1);
+        /* Regresa a su tamaño original sin sombra */
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* Adaptación para pantallas táctiles de celulares pequeños */
+@media (max-width: 480px) {
+    .whatsapp-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    .whatsapp-btn__icon {
+        width: 26px;
+        height: 26px;
+    }
+}
 
 
 
