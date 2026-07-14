@@ -15,23 +15,19 @@ El objetivo de este proyecto es ofrecer una experiencia de usuario (UX/UI) "clea
 * **Arquitectura de Código:** Aplicación rigurosa de la metodología **BEM** (Block, Element, Modifier).
 * **Control de Versiones:** GitFlow y Conventional Commits.
 
-## ![alt text](image.png) Capturas de Pantalla
+## ![alt text](image![alt text]( /img/image.png).png) Capturas de Pantalla
 
 ### Versión Escritorio (Desktop)
-> **Nota:** Reemplaza este texto por tu imagen. Puedes tomar un pantallazo, guardarlo en la carpeta `img/` y enlazarlo así: `![Escritorio](img/screenshot-desktop.png)`
+> **Nota:** ![alt text](/img/image2.png)
 
 ### Versión Móvil (Mobile)
-> **Nota:** Reemplaza este texto por tu imagen. `![Móvil](img/screenshot-mobile.png)`
-
-## ⚙️ Instrucciones de Visualización Local
-Para visualizar este proyecto en tu entorno local, sigue estos pasos:
-1. Clona este repositorio: `git clone https://github.com/tu-usuario/EcoMarket_JoseMiguelSandoval.git`
-2. Ve al directorio del proyecto: `cd EcoMarket_JoseMiguelSandoval`
-3. Abre el archivo `index.html` en cualquier navegador web moderno (Chrome, Firefox, Safari). Alternativamente, puedes usar la extensión *Live Server* en VS Code.
+> **Nota:** ![alt text](/img/image3.png)
+## ⚙️ Link de GitHub
+https://github.com/Zato-creator/EcoMarket_JoseMiguelSandoval.git
 
 ## 🌐 Despliegue en Vivo (Live Demo)
 El proyecto ha sido desplegado exitosamente y es accesible desde cualquier dispositivo.
-👉 **[Haz clic aquí para ver el proyecto en vivo](ENLACE_DE_TU_PAGINA_AQUI)**
+👉 **[Haz clic aquí para ver el proyecto en vivo](https://ecomarket-website.vercel.app/index.htmlI)**
 
 ---
 **Autor:** Jose Miguel Sandoval Jaimes
