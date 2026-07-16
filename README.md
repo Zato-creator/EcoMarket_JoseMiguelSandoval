@@ -27,7 +27,7 @@ https://github.com/Zato-creator/EcoMarket_JoseMiguelSandoval.git
 
 ## 🌐 Despliegue en Vivo (Live Demo)
 El proyecto ha sido desplegado exitosamente y es accesible desde cualquier dispositivo.
-👉 **[Haz clic aquí para ver el proyecto en vivo](https://ecomarket-website.vercel.app/)**
+👉 **[https://ecomarket-website.vercel.app/]**
 
 ---
 **Autor:** Jose Miguel Sandoval Jaimes
