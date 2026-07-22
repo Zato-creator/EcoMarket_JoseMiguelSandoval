@@ -29,5 +29,18 @@ https://github.com/Zato-creator/EcoMarket_JoseMiguelSandoval.git
 El proyecto ha sido desplegado exitosamente y es accesible desde cualquier dispositivo.
 👉 **[Haz clic aquí para ver el proyecto en vivo](https://ecomarket-website.vercel.app/)**
 
+
+## 🚀 Últimas Actualizaciones: Sección de Blog y Artículos
+
+Se ha trabajado en la optimización y maquetación de la sección del blog para mejorar la experiencia de usuario y la estética general del proyecto EcoMarket:
+
+* **Corrección de enrutamiento:** Se ajustaron las rutas relativas (`../`) en `views/blog.html` garantizando la carga correcta del header global y los archivos CSS de layout.
+* **Refinamiento UI en tarjetas:** Se implementó `border-radius` en las imágenes de las publicaciones para un acabado más suave y moderno.
+* **Nueva Vista de Lectura (`articulo.html`):**
+  * Estructuración semántica con HTML5 (`<main>`, `<article>`, `<aside>`).
+  * **Layout con CSS Grid:** Diseño a dos columnas (contenido principal y barra lateral) completamente responsivo, adaptándose a una sola columna en dispositivos móviles.
+  * **Sidebar maquetado con Flexbox:** Incluye tarjeta de autor, sección de artículos relacionados y un formulario de suscripción con estilos pulidos.
+  * **Centrado de Layout:** Se limitó el ancho del contenedor principal a `1200px` con márgenes automáticos para proporcionar "aire" visual y evitar que el contenido se extienda a los bordes de la pantalla.
+
 ---
 **Autor:** Jose Miguel Sandoval Jaimes
